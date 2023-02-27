@@ -6,4 +6,4 @@
 
 Thanks for checking out this is front-end-mentor coding challenge.
 
-DEMO here
+DEMO here https://azr-arch.github.io/notifications-page-main/
