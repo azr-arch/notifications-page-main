@@ -67,10 +67,6 @@ p{
     cursor: pointer;
 }
 
-.user-name:hover{
-    color: var(--primary-blue);
-}
-
 .page-header{
     display: flex;
     justify-content: space-between;
@@ -112,6 +108,11 @@ p{
 
 .highlight{
     margin-left: 3px;
+}
+
+.highlight:hover,
+.user-name:hover{
+    color: var(--primary-blue);
 }
 
 .post-duration{
