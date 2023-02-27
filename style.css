@@ -1,0 +1,182 @@
+:root{
+    --primary-red: hsl(1, 90%, 64%);
+    --primary-blue: hsl(219, 85%, 26%);
+
+    --white: hsl(0, 0%, 100%);
+    --v-light-gray-blue: hsl(210, 60%, 98%);
+    --light-gray-blue-1: hsl(211, 68%, 97%);
+    --light-gray-blue-2: hsl(205, 33%, 90%);
+    --gray-blue: hsl(219, 14%, 63%);
+    --dark-gray-blue: hsl(219, 12%, 42%);
+    --v-dark-blue: hsl(224, 21%, 14%);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    
+    display: grid;
+    place-items: center;
+}
+
+p{
+    margin: 0;
+}
+
+.notification-page{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+    width: 60%;
+    height: 90%;
+    background-color: var(--white);
+    padding: 2em;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+    gap: .5em;
+}
+
+.message{
+    cursor: pointer;
+}
+
+.message,
+.private-msg{
+    font-size: .9em;
+    color: var(--dark-gray-blue);
+}
+
+.header-title,
+.user-name{
+    color: var(--v-dark-blue);
+    font-weight: bolder;
+}
+
+.header-markAlRead{
+    color: var(--dark-gray-blue);
+    cursor: pointer;
+}
+
+.user-name{
+    font-size: 1em;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.user-name:hover{
+    color: var(--primary-blue);
+}
+
+.page-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:1em;
+    width: 100%;
+}
+
+.header-count {
+    margin-left: 10px;
+    padding: .2em .7em;
+    border-radius: 5px;
+    background: var(--primary-blue);
+    margin-right: auto;
+    color: white;
+    font-size: 12px;
+}
+
+
+.notification-item{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 1em;
+    width: 100%;
+    padding-inline: 1.4em;
+    border-radius: 10px;
+    padding: .5em 1.4em;
+    
+}   
+
+.item-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .3em;
+}
+
+.highlight{
+    margin-left: 3px;
+}
+
+.post-duration{
+    font-size: 12px;
+    color: var(--gray-blue);
+}
+
+.unread{
+    background: var(--light-gray-blue-1);
+    transition: background 100ms ease-out;
+    position: relative;
+}
+
+/* unread notification red dot */
+.unread::after{
+    content: '';
+
+    width: 10px;
+    aspect-ratio: 1;
+    
+    position: absolute;
+    right: 2%;
+    top: 35%;
+
+    border-radius: 50%;
+    background-color: var(--primary-red);
+}
+
+.private-msg{
+    border: 1px solid var(--light-gray-blue-2);
+    padding: 1.2em;
+    margin-top: 0px;
+}
+
+/* .exception class for private messages to alignstart user-profiles */
+.exception{
+    align-items: flex-start;
+}
+
+@media screen and (max-width: 850px) {
+    .message,
+    .private-msg,
+    .header-markAlRead{
+        font-size: 0.8em;
+    }
+
+    .header-title{
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .notification-page{
+        height: 99%;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .message,
+    .private-msg,
+    .header-markAlRead{
+        font-size: 0.6em;
+    }
+    .header-title{
+        font-size: .8em;
+    }
+}
